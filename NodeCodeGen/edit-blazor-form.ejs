@@ -1,0 +1,18 @@
+<h3>Edit <%= entityName %></h3>
+<form method="post" action="/<%= entityName %>/Edit">
+    <% properties.forEach(function(property) { %>
+        <div class="form-group">
+            <label for="<%= property.name %>"><%= property.name %></label>
+            <% if (property.format === 'date-time') { %>
+                <input type="datetime-local" id="<%= property.name %>" class="form-control" />
+            <% } else if (property.type === 'string') { %>
+                <input type="text" id="<%= property.name %>" class="form-control" />
+            <% } else if (property.type === 'number') { %>
+                <input type="number" id="<%= property.name %>" class="form-control" />
+            <% } else if (property.type === 'boolean') { %>
+                <input type="checkbox" id="<%= property.name %>" class="form-control" />
+            <% } %>
+        </div>
+    <% }); %>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

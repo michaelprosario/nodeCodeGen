@@ -1,0 +1,42 @@
+@page "/edit-time-entry"
+@inject IJSRuntime JSRuntime
+
+<h3>Edit Time Entry</h3>
+
+<form method="post" action="/TimeEntry/Edit">
+    <div class="form-group">
+        <label for="Id">Id</label>
+        <input id="Id" class="form-control" @bind="TimeEntry.Id" readonly />
+    </div>
+
+    <div class="form-group">
+        <label for="StartTime">Start Time</label>
+        <input type="date" id="StartTime" class="form-control" @bind="TimeEntry.StartTime" />
+    </div>
+
+    <div class="form-group">
+        <label for="EndTime">End Time</label>
+        <input type="date" id="EndTime" class="form-control" @bind="TimeEntry.EndTime" />
+    </div>
+
+    <div class="form-group">
+        <label for="Notes">Notes</label>
+        <input type="text" id="Notes" class="form-control" @bind="TimeEntry.Notes" />
+    </div>
+
+    <div class="form-group">
+        <label for="ProjectId">Project Id</label>
+        <input type="number" id="ProjectId" class="form-control" @bind="TimeEntry.ProjectId" />
+    </div>    
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+@code {
+    protected TimeEntry TimeEntry { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        //TimeEntry = await LoadTimeEntry(); // Implement this method to load an existing TimeEntry
+    }
+}
