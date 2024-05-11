@@ -18,8 +18,9 @@ function extractProperties(renderCodeForEntityCommand) {
     return result;
 }
 
-let templateInputData = {
-    entityName: renderCodeForEntityCommand.entityName,
+let templateInputData = 
+{
+    metaData: renderCodeForEntityCommand.metaData,
     properties: extractProperties(renderCodeForEntityCommand)
 }
 

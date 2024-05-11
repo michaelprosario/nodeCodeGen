@@ -1,8 +1,13 @@
 {
-    "entityName": "TimeEntry",
-    "entityPluralName": "TimeEntries",
-    "entityDescription": "Time entries for a project",    
-    "entityIdProperty": "TimeEntry",  
+    "metaData": 
+    {
+        "name": "TimeEntry",
+        "pluralName": "TimeEntries",
+        "displayName": "Time Entry",
+        "displayPluralName": "Time Entries",    
+        "description": "Time entries for a project",    
+        "idProperty": "Id"
+    },
 
     "entitySchema": {
         "$schema": "http://json-schema.org/draft-07/schema#",
@@ -11,26 +16,31 @@
             "Id": {
                 "type": "string"
             },
-            "Title": {
+            "ProjectId": {
                 "type": "string"
             },
-            "Description": {
+            "UserId": {
                 "type": "string"
             },
-            "AcceptanceCriteria": {
-                "type": "string"
-            },
-            "Estimate": {
-                "type": "number"
-            },
-            "Status": {
+            "Date": {
                 "type": "string",
-                "enum": ["To Do", "In Progress", "Done"]
+                "format": "date"
             },
-            "AssignedTo": {
+            "StartTime": {
+                "type": "string",
+                "format": "time"
+            },
+            "EndTime": {
+                "type": "string",
+                "format": "time"
+            },
+            "Hours": {
+                "type": "number"
+            },            
+            "Notes": {
                 "type": "string"
             }
         },
-        "required": ["Id", "Title", "Description", "AcceptanceCriteria", "Estimate", "Status"]
+        "required": ["Id", "ProjectId", "UserId", "Date", "StartTime", "EndTime", "Notes"]
     }
 }
