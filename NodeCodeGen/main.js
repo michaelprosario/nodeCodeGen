@@ -2,6 +2,7 @@ let ejs = require('ejs');
 let fs = require('fs');
 
 let renderCodeForEntityCommand = require('./renderCodeForEntityCommand.json');
+const { sourceMapsEnabled } = require('process');
 
 // create function to extract a list of properties from the renderCodeForEntityCommand
 function extractProperties(renderCodeForEntityCommand) {
@@ -24,11 +25,11 @@ let templateInputData =
     properties: extractProperties(renderCodeForEntityCommand)
 }
 
-// console.log(templateInputData);
-
 // load the template file 'edit-blazor-form.ejs'
 let template = fs.readFileSync('edit-blazor-form.ejs', 'utf8');
 
 // render the template with the given data
 let result = ejs.render(template, templateInputData);
-console.log(result);
+
+// write the result to a file a file called output.html
+fs.writeFileSync('output.html', result);
