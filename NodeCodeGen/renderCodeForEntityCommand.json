@@ -1,0 +1,36 @@
+{
+    "entityName": "TimeEntry",
+    "entityPluralName": "TimeEntries",
+    "entityDescription": "Time entries for a project",    
+    "entityIdProperty": "TimeEntry",  
+
+    "entitySchema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+            "Id": {
+                "type": "string"
+            },
+            "Title": {
+                "type": "string"
+            },
+            "Description": {
+                "type": "string"
+            },
+            "AcceptanceCriteria": {
+                "type": "string"
+            },
+            "Estimate": {
+                "type": "number"
+            },
+            "Status": {
+                "type": "string",
+                "enum": ["To Do", "In Progress", "Done"]
+            },
+            "AssignedTo": {
+                "type": "string"
+            }
+        },
+        "required": ["Id", "Title", "Description", "AcceptanceCriteria", "Estimate", "Status"]
+    }
+}
