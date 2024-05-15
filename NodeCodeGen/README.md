@@ -33,3 +33,4 @@ iri-reference: A string instance is valid against this attribute if it is a vali
 uuid: A string instance is valid against this attribute if it is a valid UUID according to RFC4122.
 
 regex: A string instance is valid against this attribute if it is a valid regular expression, according to the ECMA 262 regular expression dialect.
+
